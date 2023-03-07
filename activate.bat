@@ -1,0 +1,1 @@
+C:\django\ecomerce\env\Scripts\activate
