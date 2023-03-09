@@ -3,4 +3,6 @@ from .models import Item
 
 def detail(request,pk):
     item= get_object_or_404(Item, pk=pk)
-    return render(request, 'detail.html', {'item':item})
+    related_items=Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
+    #el exclude es para que no incluya el item actual, ademas guardo solo los primeros 3 items
+    return render(request, 'detail.html', {'item':item,'related_items':related_items})
