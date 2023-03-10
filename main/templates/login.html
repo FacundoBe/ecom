@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% block title%} Registration Page {% endblock %}
+{% block title%} Login Page {% endblock %}
 
 {% block content %}
 <div class="w-1/2 my-6 mx-auto rounded-xl bg-gray-100 ">
-    <h1 class="mb-6 text-3xl"> Sign up </h1>
+    <h1 class="mb-6 text-3xl"> Log in </h1>
     <form action="" method="post">
         {% csrf_token %}
   
@@ -13,21 +13,12 @@
             {{form.username}} 
         </div>
 
-        <div class="mb-3 px-5">
-            <label class="inline-block mb-2 "> Email </label> <br>
-            {{form.email}}
-        </div>
-
+      
         <div class="mb-3 px-5">
             <label class="inline-block mb-2 "> Password </label> <br>
-            {{form.password1}}
+            {{form.password}}
         </div>
 
-        <div class="mb-3 px-5">
-            <label class="inline-block mb-2 "> Confirm Password </label> <br>
-            {{form.password2}}
-        </div>
-        
         <!-- Display errors in the bottom of the form -->
         {% if form.errors or form.non_field_errors %}
             <div class="mb-3 p-6 bg-red-100 rounded-xl">
