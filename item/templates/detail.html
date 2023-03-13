@@ -7,7 +7,7 @@
 
 <div class="grid grid-cols-5 gap-6">
     <div class="col-span-3">
-        <img src="{{ item.image.url }}" class="rounded-xl">
+        <img src="{{ item.image.url }}" class="main-img rounded-xl">
     </div>
     <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
         <h1 class="mb-6 text-3xl"> {{item.name}} </h1>
@@ -17,9 +17,21 @@
         <p class="text-gray-700"><strong>Description:</strong> {{item.description}}</p>
         {% endif %}
 
-        <a href="#"
-            class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 ">
-            Contact Seller</a>
+        {% if item.created_by == request.user %}
+            <div class="mt-6 p-6 bg-white rounded-xl">
+                <p> This is your Item</p>
+                <a href="{% url 'edit' item.id %}" class="inline-block mt-6 px-8 py-3 test-lg font-semibold
+                 bg-gray-500 text-white rounded-xl hover:bg-gray-700"> Edit </a>
+                <a href="{% url 'delete' item.id %}" class="inline-block mt-6 px-6 py-3 test-lg font-semibold
+                 bg-red-500 text-white rounded-xl hover:bg-red-600"> Delete </a>
+            </div>
+         {% else %}
+            <a href="#"
+            class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 
+            text-white rounded-xl hover:bg-teal-700 "> Contact Seller</a>
+        {% endif %}
+
+ 
 
 
     </div>
