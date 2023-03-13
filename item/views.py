@@ -4,11 +4,24 @@ from .models import Item
 from .forms import NewItemForm,EditItemForm
 
 
+def items(request):
+    query=request.GET.get('query','')
+
+    items=Item.objects.filter(is_sold=False)
+
+    if query:
+        items=Item.objects.filter(name__icontains=query, is_sold=False )
+
+
+    return render(request, 'items.html', {'items':items,'query':query,})
+
+
 def detail(request,pk):
     item= get_object_or_404(Item, pk=pk)
     related_items=Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
     #el exclude es para que no incluya el item actual, ademas guardo solo los primeros 3 items
     return render(request, 'detail.html', {'item':item,'related_items':related_items})
+
 
 @login_required
 def new(request):
