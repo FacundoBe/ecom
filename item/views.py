@@ -1,19 +1,25 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required 
-from .models import Item
+from .models import Item, Category
 from .forms import NewItemForm,EditItemForm
-
+from django.db.models import Q
 
 def items(request):
     query=request.GET.get('query','')
-
+    category_id=int(request.GET.get('category',0)) # Es inportante convetirlo a int por que viene como str
     items=Item.objects.filter(is_sold=False)
+    categories=Category.objects.all()
 
+    if category_id:
+        items=items.filter(category_id=category_id)
+    
     if query:
-        items=Item.objects.filter(name__icontains=query, is_sold=False )
+        items=items.filter(Q(name__icontains=query) | Q(description__icontains=query))
+    
 
+    return render(request, 'items.html', {'items':items,'query':query,'categories':categories,
+                                          'category_id':category_id})
 
-    return render(request, 'items.html', {'items':items,'query':query,})
 
 
 def detail(request,pk):
