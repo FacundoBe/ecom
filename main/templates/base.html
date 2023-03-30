@@ -19,8 +19,11 @@
                 <a href="{% url 'new' %}" class="text-lg text-gray-100 font-bold hover:text-amber-300">New Item</a>
                 <a href="{% url 'items' %}" class="text-lg text-gray-100 font-bold hover:text-amber-300">Browse </a>
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'inbox' %}" class="px-5 py-2 text-lg font-bold bg-gray-500 border text-gray-100 rounded-xl hover:border-amber-200 hover:text-amber-300"> Inbox</a>
-                <a href="{% url 'dashboard' %}" class="px-5 py-2 text-lg font-bold rounded-xl text-gray-100 border hover:border-amber-200 hover:text-amber-300"> Dashboard</a>
+                <a href="{% url 'inbox' %}" class="px-5 py-2 text-lg font-semibold bg-gray-500 border text-gray-100 
+                rounded-xl hover:border-amber-200 hover:text-amber-300"> Inbox</a>
+                <a href="{% url 'dashboard' %}" class="px-5 py-2 text-lg font-semibold rounded-xl text-gray-100 border
+                 hover:border-amber-200 hover:text-amber-300"> Dashboard</a>
+                <a href="{% url 'logout' %}" class="text-lg text-gray-100 font-semi bold hover:text-amber-300">Logout</a>
                 {% else %}
                 <a href="{% url 'signup' %}"
                     class="px-5 py-2 text-lg font-bold bg-gray-500 border text-gray-100 rounded-xl hover:border-amber-200 hover:text-amber-300"> Sign

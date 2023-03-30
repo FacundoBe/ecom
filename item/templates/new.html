@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title%}  {{ title }} {% endblock %}
 
 {% block content %}
-<div class="w-1/2 my-6 mx-auto rounded-xl bg-gray-100 ">
-    <h1 class="mb-6 text-3xl"> Log in </h1>
+<link rel="stylesheet" href="{% static 'css/new.css' %}">
+<div class=" form-new m-6 mx-auto px-12 py-6 rounded-xl bg-gray-200 ">
+    <h1 class="mb-6 text-3xl"> New Item </h1>
     <form action="" method="post" enctype="multipart/form-data"> 
         {% csrf_token %}    
         <div class="space-y-4">
@@ -21,8 +23,8 @@
          </div>
      {% endif %}
 
-        <button type="submit" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl
-        hover:bg-teal-700 ">Submit </button>
+        <button type="submit" class="inline-block m-6 px-5 py-2 text-lg font-semibold 
+        bg-gray-500 border text-gray-100 rounded-xl hover:border-amber-200 hover:text-amber-300 ">Submit </button>
     </form>
     
 </div>

@@ -1,7 +1,7 @@
 from django import forms
 from .models import Item
 
-INPUT_CLASSES='w-full py-4 px-6 rounded-xl border'
+INPUT_CLASSES='w-full py-2 px-6 rounded-xl border'
 
 class NewItemForm(forms.ModelForm):
     class Meta:
@@ -15,7 +15,7 @@ class NewItemForm(forms.ModelForm):
                 'class':INPUT_CLASSES
                 }),
             'description':forms.Textarea(attrs={
-                'class':INPUT_CLASSES
+                'class':INPUT_CLASSES, 'rows':4
                 }),
             'price':forms.TextInput(attrs={
                 'class':INPUT_CLASSES
