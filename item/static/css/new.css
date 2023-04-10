@@ -1,5 +1,10 @@
+.main-container
+{
+min-height: 73vh;
+}
+
 .form-new {
     margin: 0 auto;
     width:700px;
-    min-width:500px
+    min-width:700px;
 }
