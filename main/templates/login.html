@@ -2,13 +2,13 @@
 {% block title%} Login Page {% endblock %}
 
 {% block content %}
-<div class="w-1/2 my-6 mx-auto rounded-xl bg-gray-100 ">
+<div class="w-1/2 p-6 my-6 mx-auto rounded bg-gray-200 ">
     <h1 class="mb-6 text-3xl"> Log in </h1>
     <form action="" method="post">
         {% csrf_token %}
   
 
-        <div class="mb-3 px-5">
+        <div class="mb-4 px-5">
             <label class="inline-block mb-2 "> Username </label> <br>
             {{form.username}} 
         </div>
@@ -30,7 +30,7 @@
             </div>
         {% endif %}
         
-        <button type="submit" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl
+        <button type="submit" class="inline-block mt-6 mx-5 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl
         hover:bg-teal-700 ">Submit!!</button>
 
     </form>
