@@ -13,8 +13,6 @@ Pagina de inicio (usuario anonimo)
 Pagina de inicio (usuario logeado)
 ![imagen](https://github.com/FacundoBe/ecom/assets/104530671/409f9df3-a6bf-441c-bcfd-7f9ce95d8b78)
 
-![imagen](https://github.com/FacundoBe/ecom/assets/104530671/918c0a22-4355-43c5-b0ae-c5fafc418f1a)
-
 Busqueda por item o categoria.
 ![imagen](https://github.com/FacundoBe/ecom/assets/104530671/0b0745fd-d85d-4bd9-9083-ac7c71798c6d)
 
