@@ -23,4 +23,4 @@ Panel de mensajes.
 ![imagen](https://github.com/FacundoBe/ecom/assets/104530671/b0f55e92-15d1-4278-994f-bfd742767f06)
 
 Pagina de contacto.
-![imagen](https://github.com/FacundoBe/ecom/assets/104530671/4e7b6a9f-84b0-47c5-8366-ab35a6345c14)
+![imagen](https://github.com/FacundoBe/ecom/assets/104530671/0f2b7333-e0eb-42b3-b8d6-db59a6a3a03f)
